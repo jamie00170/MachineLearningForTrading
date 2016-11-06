@@ -10,7 +10,11 @@ def test_run():
 	# (The oldest data)
 
 	# prints the last 10 rows
-	print df.tail(10) 
+	#print df.tail(10) 
+
+	# print row 10 to 20
+	print df[10:21]
+
 
 if __name__ == "__main__":
 	test_run()
