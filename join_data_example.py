@@ -34,6 +34,9 @@ def plot_data(df, title="Stock prices", x_label='Date', y_label="Price"):
 
 	plt.show() # must be called to show plot
 
+def normalize_data(df):
+	""" Normalize stock prices using the first row of the dataframe"""
+	return df/df.ix[0,:]	
 
 def main():
 	# Define date range
@@ -56,6 +59,9 @@ def main():
 
 	# Slice by row and column
 	#print df.ix['2010-01-01': '2010-01-31', ['AAPL', 'IBM']]
+
+	# normalize the data if required 
+	#df = normalize_data(df)
 
 	plot_data(df)
 
