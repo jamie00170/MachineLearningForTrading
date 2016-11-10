@@ -73,5 +73,22 @@ def main():
 	# Elements from the top corner
 	print a[0:2, 0:2]
 
+	# Array before modification
+	print "Array before modification: \n", a
+
+	# Assinging a value to a specific location
+	a[0, 0] = 1
+	print "\n Modified Array with single value: \n", a
+
+	# Assigning a single value to an entire row
+	a[1,:] = 2
+	print "\n Modified with a replaced row: \n", a 
+
+	# Assigning a list to a column in an array
+	a[:, 3] = [1, 2, 3, 4, 5]
+	print "\n Modified with a replaced column: \n", a
+
+
+
 if __name__ == "__main__":
 	main()
