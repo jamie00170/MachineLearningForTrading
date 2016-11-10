@@ -88,7 +88,16 @@ def main():
 	a[:, 3] = [1, 2, 3, 4, 5]
 	print "\n Modified with a replaced column: \n", a
 
+	# Boolean Index Arrays
+	a = np.array([(20, 25, 10, 23, 26, 32, 10, 5, 0), (0, 2, 50, 20, 0, 1, 28, 5, 0)])
+	print a
 
+	#Calculating mean 
+	mean = a.mean()
+	print mean
+
+	# masking - all values less than the mean are removed
+	print a[a<mean]
 
 if __name__ == "__main__":
 	main()
