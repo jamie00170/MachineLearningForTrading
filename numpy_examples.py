@@ -60,5 +60,18 @@ def main():
 	print "Maximum of each row:\n", a.max(axis=1)
 	print "Mean of all elements: ", a.mean() 
 
+	# Acessing elements
+	a = np.random.rand(5, 4)
+	print "Array: \n", a
+
+	# Access element at position (3, 2)
+	element = a[3, 2]
+
+	# Elements from the second to third columns in the first row
+	print a[0, 1:3]
+
+	# Elements from the top corner
+	print a[0:2, 0:2]
+
 if __name__ == "__main__":
 	main()
