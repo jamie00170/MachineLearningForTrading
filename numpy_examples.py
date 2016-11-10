@@ -99,5 +99,21 @@ def main():
 	# masking - all values less than the mean are removed
 	print a[a<mean]
 
+	# Arithmetic Operations
+	# Multiply a by 2
+	print "\n Multiply a by 2:\n", 2 * a
+
+	# Divide by 2
+	print "\n Divide a by 2:\n", a / 2.0
+
+	# Create a new array b
+	b = np.array([(100, 200, 300, 400, 500), (1, 2, 3, 4, 5)])
+	print "\n Original array b:\n", b
+
+	# Add the two arrays
+	print "\nAdd a + b:\n", a + b
+
+
+
 if __name__ == "__main__":
 	main()
