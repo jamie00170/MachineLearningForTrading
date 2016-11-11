@@ -65,5 +65,11 @@ def main():
 
 	plot_data(df)
 
+	# Compute global statistics for each stock
+	print df.mean() # mean for each stock
+	print df.median() # median for each stock - middle value
+	# standard deviation for each stock, high std indicates high variation
+	print df.std() 
+
 if __name__ == "__main__":
 	main()
