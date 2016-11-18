@@ -2,21 +2,34 @@ import pandas.io.data as web
 import datetime
 import matplotlib.pyplot as plt
 import sys
+import argparse
 from compute_rolling_statistics_example import get_rolling_mean, get_rolling_std, get_bollinger_bands
 
 
 def main():
 
+	parser = argparse.ArgumentParser()
+	parser.add_argument("ticker", help="The Ticker symbol of the stock you wish to graph.", type=str)
+	parser.add_argument("-sd", "--startdate", help="The date you want the price of the stock to start from. " + \
+		" N.B. date should be of the format ddmmyyyy")
+	args = parser.parse_args()
+
+	if (len(sys.argv) > 1):
+		tickerSymbol = args.ticker
+	else:
+		print "Must provide a ticker symbol"
+		sys.exit(1)
+
+	if args.startdate:
+		start_day = int(args.startdate[0:2])
+		start_month = int(args.startdate[2:4])
+		start_year = int(args.startdate[4:])
+		
+
 	# Define date ranges
-	start = datetime.datetime(2016, 1, 1)
-	end = datetime.datetime(2016, 11, 10)
-
-	# Default ticker
-	tickerSymbol = "IBM"
-
-	# Use provided ticker if supplied via command line arg
-	if (len(sys.argv) > 0):
-		tickerSymbol = str(sys.argv[1]) 
+	start = datetime.datetime(start_year, start_month, start_day)
+	end = datetime.datetime(2016, 11, 17) 
+		
 	try: 
 		# Use a DataReader to store the data in a pandas dataframe
 		df = web.DataReader(tickerSymbol, 'yahoo', start, end)
